@@ -10,11 +10,10 @@
 '''
 
 from flask_restful import Resource
-from flask import request, jsonify
+from flask_cors import cross_origin
 from flask_restful.reqparse import RequestParser ## 校验器
 from QASystemOnMedicalKG.chatbot_graph import ChatBotGraph
 handler = ChatBotGraph()
-from . import qa
 
 
 # @qa.route("/", methods=['POST'])
@@ -36,9 +35,9 @@ class QASystemOnMedicalKG(Resource):
     parser = RequestParser()
     parser.add_argument('question', type=str, required= True, help='Rate cannot be converted')
     def get(self):
-
         return {"answer": "answer"}
 
+    @cross_origin()
     def post(self):
         try:
             args = self.parser.parse_args()
@@ -47,4 +46,4 @@ class QASystemOnMedicalKG(Resource):
             answer = handler.chat_main(question)
             return {"data":{"answer":answer}, "code":200, "msg":"success"}
         except Exception as e:
-            print(e)
+            return { "code":5000, "msg":"failed"}
