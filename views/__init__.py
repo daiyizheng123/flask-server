@@ -14,6 +14,7 @@ from flask_restful import Api
 
 qa = Blueprint('qa', __name__)
 api = Api(qa)
+
 from .aq_view import *
 
 api.add_resource(QASystemOnMedicalKG, '/', endpoint='QASystemOnMedicalKG')

@@ -14,5 +14,5 @@ NEO4J_PASSORD = ""
 export FLASK_APP=main.py
 export FLASK_ENV=development # 或者production
 conda activate "自己的虚拟环境"
-gunicorn -w 4 -b 127.0.0.1:5000 -D --access-logfile ./logs/log main:app # 生产环境部署命令
+gunicorn -w 4 -b 0.0.0.0:5000 --access-logfile ./log/log main:app --log-level=debug --timeout 120 # 生产环境部署命令
 ```

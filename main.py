@@ -11,14 +11,9 @@
 
 
 from flask_cors import CORS
+from flask import make_response
 from flask import Flask
 from views import qa
-from flask import Response
 app = Flask(__name__)
-CORS(app)
-
 app.register_blueprint(qa, url_prefix='/qa')
-
-
-
 
