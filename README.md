@@ -1,4 +1,14 @@
 
+
+## setting.py 
+这个文件没有上传，可以自己新建
+```shell script
+## neo4j 配置
+NEO4J_HOST = ""
+NEO4J_HTTP_PORT = 7474
+NEO4J_USER = ""
+NEO4J_PASSORD = ""
+```
 ```shell script
 #环境变量
 export FLASK_APP=main.py
