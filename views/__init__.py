@@ -16,5 +16,7 @@ qa = Blueprint('qa', __name__)
 api = Api(qa)
 
 from .aq_view import *
+from .ccks_qa import *
 
-api.add_resource(QASystemOnMedicalKG, '/', endpoint='QASystemOnMedicalKG')
+api.add_resource(QASystemOnMedicalKG, '/medical/qa', endpoint='QASystemOnMedicalKG')
+api.add_resource(Nlpcc2016QA, '/nlpcc2016/qa', endpoint='NLPCC2016QA')

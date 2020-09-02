@@ -9,11 +9,10 @@
 @desc:
 '''
 
-
 from flask_cors import CORS
 from flask import Flask
 from views import qa
 app = Flask(__name__)
 CORS(app)
-app.register_blueprint(qa, url_prefix='/qa')
+app.register_blueprint(qa, url_prefix='/api/ckbqa')
 
