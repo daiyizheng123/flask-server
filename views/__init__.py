@@ -16,7 +16,7 @@ qa = Blueprint('qa', __name__)
 api = Api(qa)
 
 from .aq_view import *
-from .ccks_qa import *
+from .chatbot_medical_qa import *
 
 api.add_resource(QASystemOnMedicalKG, '/medical/qa', endpoint='QASystemOnMedicalKG')
-api.add_resource(Nlpcc2016QA, '/nlpcc2016/qa', endpoint='NLPCC2016QA')
+api.add_resource(chatboatMedicalQa, '/medical/deeplearn/qa', endpoint='NLPCC2016QA')
