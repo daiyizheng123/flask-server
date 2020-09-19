@@ -15,11 +15,12 @@ MYSQL_PORT = 3306
 MYSQL_USER = ""
 MYSQL_PASSWORD = ""
 MYSQL_DB = ""
+MODEL_HTTP_IP_PORT = "http://127.0.0.1:3000"
 ```
 ```shell script
 #环境变量
 export FLASK_APP=main.py
 export FLASK_ENV=development # 或者production
 conda activate "自己的虚拟环境"
-gunicorn -w 4 -D -b 127.0.0.1:5000 --access-logfile ./log/log --timeout 200 main:app # 生产环境部署命令
+gunicorn -w 4 -D -b 0.0.0.0:5000 --access-logfile ./log/log --timeout 200 main:app # 生产环境部署命令
 ```
